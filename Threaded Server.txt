@@ -1,0 +1,22 @@
+
+
+ServerSocket ss new ServerSocket(2001);
+int count=0;
+
+while (true)
+{
+
+Socket s = ss.accept();
+
+myThread myT = new myThread(s,count); <------THIS IS CRUCIAL. Thread must accept the socket as part of its arguments!!
+myT.start();
+count++;
+
+//accept socket
+//start/call the thread
+//do something?
+
+}
+
+
+my IP: 192.168.1.114
